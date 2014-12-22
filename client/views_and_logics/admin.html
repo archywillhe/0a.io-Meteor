@@ -1,0 +1,163 @@
+<template name="ArchySanctuary">
+<div id="blog-admin">
+  <div class="container blog-admin-index">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>0a: Archy here</h1>
+      </div>
+      <div class="col-md-8">
+        <a href="#" class="btn pull-right btn-default margin-top-right-15">
+          <i class="fa fa-plus"></i> Write something!
+        </a>
+        <select class="btn pull-right form-control btn-default width-auto margin-top-right-15">
+          <option value="all">All articles</option>
+          <option value="mine">unpublished</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        {{#if articles}}
+        {{> reactiveTable collection=articles settings=table}}
+        {{else}}
+        <a href="#" class="">Archy hasn't wrote anything yet :/</a>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+</template>
+
+<template name="ArchySanctuaryUpdatedColumn">
+{{getDate updatedAt}} {{getMonth updatedAt}}
+</template>
+
+<template name="ArchySanctuaryPublishedColumn">
+{{#if published}}
+{{getDate publishedAt}} {{getMonth updatedAt}}
+{{else}}
+<i class="fa fa-ban"></i>
+{{/if}}
+</template>
+
+<template name="ArchySanctuaryStatusColumn">
+{{#if published}}
+<a href="#" class="makeDraft">Draft</a> | <span class="selected"><b>Published</b></span>
+{{else}}
+<span class="selected"><b>Draft</b></span> | <a class="makePublished" href="#">Published</a>
+{{/if}}
+</template>
+
+<template name="ArchySanctuaryEditColumn">
+<a href="{{pathFor 'editorOfArchy'}}"><i class="fa fa-edit"></i></a>
+</template>
+
+<template name="ArchySanctuaryDeleteColumn">
+<a href="#" class='delete'><i class="fa fa-trash-o"></i></a>
+</template>
+
+<template name="editorOfArchy">
+<div id="blog-admin">
+  <div class="container blog-admin-edit">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>
+        <strong>Edit article</strong>
+        </h1>
+        {{#with articleToBeEdited}}
+        <form>
+          <div class="row form-group">
+            <div class="col-md-6">
+              <label>Title</label>
+              <input tabindex="1" type="text" class="form-control" name="title" placeholder="Title" value="{{title}}">
+            </div>
+            <div class="col-md-6">
+              <label>Title for article</label>
+              <input tabindex="1" type="text" class="form-control" name="title2" placeholder="Title" value="{{title2}}">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-6">
+              <label>Slug</label>
+              <input type="text" class="form-control" name="slug" placeholder="Slug" value="{{slug}}">
+            </div>
+            <div class="col-md-6">
+              <label>Category</label>
+              <input type="text" class="form-control" name="category" placeholder="Category" value="{{category}}">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-6">
+              <label>minTime</label>
+              <input type="text" class="form-control" name="minTime" placeholder="minTime" value="{{minTime}}">
+            </div>
+            <div class="col-md-6">
+              <label>maxTime</label>
+              <input type="text" class="form-control" name="maxTime" placeholder="maxTime" value="{{maxTime}}">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label>Image</label>
+              <input class="form-control" name="coverImg" value="{{coverImg}}">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label>Content</label>
+              <textarea class="form-control html-editor" name="content" value="{{content}}"></textarea>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label>Head</label>
+              <textarea class="form-control html-editor" name="head" value="{{head}}"></textarea>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label>Foot</label>
+              <textarea class="form-control html-editor" name="foot" value="{{foot}}"></textarea>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label>subtitle</label>
+              <input type="text" class="form-control" name="subtitle" placeholder="subtitle" value="{{subtitle}}">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label>subtitle2</label>
+              <input type="text" class="form-control " name="subtitle2" placeholder="subtitle 2" value="{{subtitle2}}">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label>metaDescription</label>
+              <input type="text" class="form-control " name="metaDescription" placeholder="metaDescription" value="{{metaDescription}}">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <label>metaKeywords</label>
+              <input type="text" class="form-control " name="metaKeywords" placeholder="metaKeywords" value="{{metaKeywords}}">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-default">
+              <i class="fa fa-save"></i> Save
+              </button>
+              <a href="{{pathFor 'ArchySanctuary'}}" class="btn btn-default">
+                <i class="fa fa-ban"></i> Cancel
+              </a>
+            </div>
+          </div>
+        </form>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+</div>
+</template>

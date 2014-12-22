@@ -1,0 +1,109 @@
+<template name="qsHeader">
+{{>loading}}
+<header class="archyhead_wrap">
+	<div class="archyhead">
+		<div class="page_meta_info_wrapper">
+			<div class="page_meta_info">
+				{{#if article}}
+				{{#with article}}
+				<div class="arrow inline be-hidden1">
+					<img src="assets/img/arrow.png">
+				</div>
+				<div class="current_region inline be-hidden1">
+					<a href="/"><span>Stuff<br>I wrote</span></a>
+				</div>
+				<div class="arrow inline be-hidden1">
+					<img src="assets/img/arrow.png">
+				</div>
+				<div class="archyitem inline be-hidden1">
+					<a class="forward_to_post thumbnail"><img class="article_meta_cover_picture" src="{{coverImg}}" alt="">
+					</a>
+					<div class="archytitle tk-adobe-garamond-pro"><a class="forward_to_post">{{{title}}}</a></div>
+				</div>
+				{{/with}}
+				{{/if}}
+			</div>
+		</div>
+		<div class="central">
+			<div class="inline">
+				<a class="_0a" href="/">
+					<div class="logo">
+						<span>0a</span>
+						<img src="/assets/img/0a.png" alt="0a">
+						<div class="version">v2.1</div>
+					</div>
+				</a>
+				<div class="views_choices">
+					<!-- 				<div class="views_choice selected">classical view</div>
+					<div class="views_choice">calendar view</div> -->
+					<div class="nav_choices">
+						<a href="about" class="opacity_hover about_trigger"><div class="nav_choice"><span>About</span></div></a>
+						<!-- <a href="https://twitter.com/archywilhes" class="opacity_hover" target="_blank"><div class="nav_choice"><span>.<br><small>.</small></span></div></a> -->
+						<a href="https://twitter.com/archywilhes" class="opacity_hover" target="_blank"><div class="nav_choice"><span><i class="fa fa-twitter fa-lg"></i> </span></div></a>
+						<a href="https://www.facebook.com/0a.byArchy" class="opacity_hover" target="_blank"><div class="nav_choice"><i class="fa fa-facebook fa-lg"></i> </div></a>
+						<a href="/rss.xml" class="opacity_hover" target="_blank"><div class="nav_choice"><span><i class="fa fa-rss fa-lg"></i> </span></div></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="about_me  tk-adobe-garamond-pro">
+			<div class="list_nav_wrap">
+				<ul class="list_nav list-inline"><li class="about_0a">About 0a</li><li class="about_archy not_selected">About me, the sole contributor of 0a</li></ul>
+			</div>
+			<div class="about_0a_content">
+				{{>about_0a}}
+			</div>
+			<div class="about_archy_content">
+				{{>about_archy}}
+			</div>
+		</div>
+	</div>
+</header>
+<a href="https://github.com/0a-/0a.io"><img class="fork-me-please" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+</template>
+
+<template name="qsAdminHeader">
+<header class="archyhead_wrap">
+	<div class="archyhead">
+		<div class="central">
+			<div class="inline">
+				<a class="_0a" href="/">
+					<div class="logo">
+						<span>0a</span>
+						<img src="/assets/img/0a.png" alt="0a">
+						<div class="version">v2.1</div>
+					</div>
+				</a>
+				<div class="views_choices">
+					<!-- 				<div class="views_choice selected">classical view</div>
+					<div class="views_choice">calendar view</div> -->
+					<div class="nav_choices">
+						a rather simple admin Panel :)
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<a href="https://github.com/0a-/0a.io"><img class="fork-me-please" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+</template>
+
+
+<template name="qsFooter">
+<footer class="foot">
+	{{#if article}}
+	{{#with article}}
+	<div class="whisper">{{{subtitle2}}}</div>
+	{{/with}}
+	{{else}}
+	{{#if subtitle2}}
+	<div class="whisper">{{{subtitle2}}}</div>
+	{{/if}}
+	{{/if}}
+	<div class="footer">
+		Current version 2.1. <a class="changelog" href="/changelog">View changelog here.</a>
+	</div>
+	<br>
+	<small>Handcrafted by Archy Wilhes.</small>
+</footer>
+</template>

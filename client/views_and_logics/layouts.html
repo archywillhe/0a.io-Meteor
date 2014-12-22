@@ -1,0 +1,38 @@
+<!--basic, notFound, loading -->
+<template name="basic">
+<div class="{{pathName}}">
+	{{> qsHeader}}
+	<div class="archywrap">
+		<div class="container">
+			{{> yield}}
+		</div>
+	</div>
+	{{>qsFooter}}
+</div>
+</template>
+
+<template name="admin">
+<div class="{{pathName}}">
+    {{> qsAdminHeader}}
+    <div class="archywrap">
+        <div class="container">
+            {{> yield}}
+        </div>
+    </div>
+    {{>qsFooter}}
+</div>
+</template>
+
+<template name="signup">
+	{{> loginButtons}}
+</template>
+
+<template name="notFound">
+<!-- something here -->
+</template>
+
+<template name="loading">
+<div class="being_loaded">
+	loading {{currentlyLoading}}..
+</div>
+</template>

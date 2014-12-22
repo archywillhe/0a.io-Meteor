@@ -1,0 +1,144 @@
+<template name="homeLists">
+<div class="archy_scroll_view_controller">
+  {{#if articles}}
+  {{> articleLists}}
+  {{/if}}
+</div>
+</template>
+
+<template name="articleLists">
+<div class="archylist"><h2><span>Stuff I wrote: Latest</span></h2>
+  <div class="row">
+    <!-- {{#each articles}} -->
+    {{#each allArticles}}
+    <div class="col-sm-4 archyitemdimension">
+      {{#each this}}
+      <div class="archyitem">
+        <div class="archydate_mobile  tk-adobe-garamond-pro">
+          <span>
+          {{publishedAt}}
+          </span>
+        </div>
+        <a href="{{pathFor 'singleArticle'}}" class="thumbnail"><img src="{{coverImg}}" alt="">
+          <div class="vcenter archycover">
+            <div class="vcenter archydate">
+              <span class="big">
+              {{getDate publishedAt}}
+              </span><br>
+              {{getMonth publishedAt}}
+            </div>
+          </div>
+        </a>
+        <div class="archytitle tk-adobe-garamond-pro">
+          <span>
+          <a class="opacity_hover" href="{{pathFor 'singleArticle'}}">
+            {{{title }}}
+          </a><br>
+          </span>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/each}}
+  </div>
+</div>
+</template>
+
+<template name="changelog">
+<div class="archy_scroll_view_controller">
+  <h2><span>Changelog of 0a.io</span></h2>
+  <div class="archylist">
+    {{#if changelog}}
+    {{#each changelog}}
+    <div class="row">
+      <div class="col-sm-1 cl_version">
+        {{version}}
+      </div>
+      <div class="col-sm-10 cl_description">
+        {{{description}}}
+      </div>
+      <div class="col-sm-1 cl_release">
+        {{getSimpleDate date}}
+      </div>
+    </div>
+    <br>
+    {{/each}}
+    {{else}}
+      No changelog found. To learn how to add/edit changelog, read it up <a href="https://github.com/0a-/0a.io#addingediting-changelog">here</a>.
+    {{/if}}
+  </div>
+</div>
+</template>
+
+<template name="singleArticle">
+{{#if articleReady}}
+{{#with article}}
+<div class="archysub">{{{subtitle}}}</div>
+<div class="archypost tk-adobe-garamond-pro">
+  <article>
+    <ul class="entry-meta1 list-inline">
+      <li class="pull-left">Published on <time pubdate datetime="">{{formatDate publishedAt}}</time></li>
+      <li class="pull-right">Last Update: {{ formatTime updatedAt }}, SG Time</li>
+    </ul>
+    <h1><span>{{{ title }}}</span></h1>
+    <ul class="entry-meta2 list-inline">
+      <li class="">
+        <address>
+          by <span class="fn"><a href="http://0a.io/about" rel="author">Archy Wilhes</a></span>
+        </address>
+      </li>
+      <li class="">
+        {{readingTime minTime maxTime}}read
+      </li>
+      <li class="archy_cap">
+        {{category}}
+      </li>
+    </ul>
+    <div class="archycoverpic be-shown">
+      <img src="{{coverImg}}" alt="">
+    </div>
+    <div class="archycontent">{{{renderContent content}}}</div>
+    <div class="archypostfooter1 overflow-hidden">
+      <div class="archycomment pull-left"><a>Show Comments</a></div>
+      <div class="archyshare pull-right">
+        <a class="social_button" target="_blank" href="{{facebookURL}}"><i class="fa fa-facebook"></i></a>
+        <a class="social_button" target="_blank" href="{{twitterURL}}"><i class="fa fa-twitter"></i></a>
+        <a class="social_button" target="_blank" href="{{googleURL}}"> <i class="fa fa-google-plus"></i></a>
+      </div>
+    </div>
+    <div class="archypostfooter2 archycommentsection">
+      <div id="disqus_thread"></div>
+    </div>
+  </article>
+</div>
+{{{foot}}}
+{{/with}}
+{{else}}
+<div class="loadingArticle">
+</div>
+{{/if}}
+</template>
+
+<template name="about">
+<div class="about_image">
+  <img src="assets/img/dutch_landscape.jpg">
+</div>
+<div class="about_me_mobile  tk-adobe-garamond-pro">
+  <div class="list_nav_wrap">
+    <ul class="list_nav list-inline"><li class="about_0a">About 0a</li></ul>
+  </div>
+  <div class="about_0a_content">
+    {{>about_0a}}
+  </div>
+  <ul class="list_nav list-inline"><li class="about_0a">About me, the sole contributor of 0a</li></ul>
+  <div class="about_archy_content">
+    {{>about_archy}}
+  </div>
+</div>
+</template>
+
+<template name="signin">
+<div class="btn btn-default margin-top-right-15">
+  {{> loginButtons}}
+</div>
+</template>
