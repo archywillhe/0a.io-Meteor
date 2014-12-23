@@ -66,6 +66,7 @@ routepolicy@1.0.3
 rss@0.1.0
 service-configuration@1.0.3
 session@1.0.5
+slava:xray@0.2.0
 spacebars@1.0.4
 spacebars-compiler@1.0.4
 spiderable@1.0.6
