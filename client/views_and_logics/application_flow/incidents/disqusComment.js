@@ -1,6 +1,6 @@
-//ↂωↂ is an incident, meow meow meow~
-var ↂωↂ = disqusComment;
-ↂωↂ.addCBforDefault(function() {
+//ಠωಠ is an incident, meow meow meow~
+var ಠωಠ = disqusComment;
+ಠωಠ.addCBforDefault(function() {
     if (typeof(window.DISQUS) !== "undefined") {
         $(".archycommentsection").css("display", "block");
         window.DISQUS.reset({

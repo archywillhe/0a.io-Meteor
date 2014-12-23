@@ -1,13 +1,13 @@
-//ↂωↂ is an incident, meow meow meow~
-var ↂωↂ = articleLoaded;
-ↂωↂ.addCBforDefault(function() {
+//ಠωಠ is an incident, meow meow meow~
+var ಠωಠ = articleLoaded;
+ಠωಠ.addCBforDefault(function() {
     Tracker.autorun(function(e) {
         var data = Router.current().data();
         if (data.article !== undefined) {
             if (data.article.foot !== undefined) {
                 Session.set("articleReadyToRender", true);
                 e.stop();
-                ↂωↂ.data = data;
+                ಠωಠ.data = data;
                 Tracker.afterFlush(function() {
                     loadingControl.doneLoading();
                     $(".archywrap").css("background-color", "#f3f3f3");
@@ -36,14 +36,14 @@ var ↂωↂ = articleLoaded;
         }
     });
 });
-ↂωↂ.mobile = function() {
+ಠωಠ.mobile = function() {
     Tracker.autorun(function(e) {
         var data = Router.current().data();
         if (data.article !== undefined) {
             if (data.article.foot !== undefined) {
                 Session.set("articleReadyToRender", true);
                 e.stop();
-                ↂωↂ.data = data;
+                ಠωಠ.data = data;
                 Tracker.afterFlush(function() {
                     loadingControl.doneLoading();
                     $(".archywrap").css("background-color", "#f3f3f3");

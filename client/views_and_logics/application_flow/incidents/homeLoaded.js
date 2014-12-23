@@ -1,6 +1,6 @@
-//ↂωↂ is an incident, meow meow meow~
-var ↂωↂ = homeLoaded;
-ↂωↂ.addCBforUniversal(function() {
+//ಠωಠ is an incident, meow meow meow~
+var ಠωಠ = homeLoaded;
+ಠωಠ.addCBforUniversal(function() {
     Tracker.autorun(function(e) {
         var data = Router.current().data();
         if (data.articles.length > 0) {

@@ -66,11 +66,6 @@ Template.singleArticle.destroyed = function() {
 Template.homeLists.created = function() {
     window.content = "home";
     aboutButton.disabled = false;
-    if (!isMobile) {
-        qsHeader.addCBforDefault(function() {
-            __0a("position", "center");
-        });
-    }
     qsHeader.addCBforUniversal(function() {
         loadingControl.loading("home page");
     });

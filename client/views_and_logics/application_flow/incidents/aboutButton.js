@@ -1,7 +1,7 @@
-//ↂωↂ is an incident, meow meow meow~
-var ↂωↂ = aboutButton;
-ↂωↂ.addCBforDefault(function() {
-    ↂωↂ.isClosed = true;
+//ಠωಠ is an incident, meow meow meow~
+var ಠωಠ = aboutButton;
+ಠωಠ.addCBforDefault(function() {
+    ಠωಠ.isClosed = true;
     //define DOM
     var _window = $(window),
         _about_me = $(".about_me"),
@@ -16,7 +16,7 @@ var ↂωↂ = aboutButton;
         this.fn();
         if (window.history.pushState) {
             window.history.pushState({
-                    about: ↂωↂ.isClosed
+                    about: ಠωಠ.isClosed
                 },
                 "0a: Archy here.",
                 "/" + this.link
@@ -25,7 +25,7 @@ var ↂωↂ = aboutButton;
     }
 
     //0 -> close, 1 -> open
-    ↂωↂ.close_open = [
+    ಠωಠ.close_open = [
         new behavior("",
             function() {
                 _about_me.css({
@@ -61,31 +61,31 @@ var ↂωↂ = aboutButton;
 
     //open if isClosed, close if 
     _about_trigger.click(function() {
-        if (ↂωↂ.disabled) {
+        if (ಠωಠ.disabled) {
             return true;
         }
         //~~true -> 1, ~~false -> 0
-        ↂωↂ.close_open[(~~ↂωↂ.isClosed)].trigger();
-        ↂωↂ.isClosed = !ↂωↂ.isClosed;
+        ಠωಠ.close_open[(~~ಠωಠ.isClosed)].trigger();
+        ಠωಠ.isClosed = !ಠωಠ.isClosed;
         return false;
     });
     _window.on('popstate', function(event) {
         var state = !!event.originalEvent.state;
-        if (ↂωↂ.isClosed === state) {
+        if (ಠωಠ.isClosed === state) {
             show_about(state);
-            ↂωↂ.isClosed = !state;
+            ಠωಠ.isClosed = !state;
         }
     });
 });
 
 //close but do not animate (do not collapse)
-ↂωↂ.closeExtension = function() {
-    if (!ↂωↂ.isClosed) {
+ಠωಠ.closeExtension = function() {
+    if (!ಠωಠ.isClosed) {
         $(".archyhead .about_me").css("display", "none");
         //console.log(__0a);
         __0a("object").removeAttr("style");
         __0a("object").removeAttr("style");
-        ↂωↂ.isClosed = true;
+        ಠωಠ.isClosed = true;
     }
 
     if (ivExpected(aboutExtension, "currentAbout", "archy")) {
@@ -93,15 +93,15 @@ var ↂωↂ = aboutButton;
     }
 }
 
-ↂωↂ.closeAndCollapseExtension = function() {
-    if (!ↂωↂ.isClosed) {
-        ↂωↂ.close_open[(~~ↂωↂ.isClosed)].trigger();
+ಠωಠ.closeAndCollapseExtension = function() {
+    if (!ಠωಠ.isClosed) {
+        ಠωಠ.close_open[(~~ಠωಠ.isClosed)].trigger();
         aboutButton.isClosed = true;
     }
 }
 
-ↂωↂ.openExtension = function() {
-    ↂωↂ.close_open[1].trigger();
-    ↂωↂ.isClosed = false;
-    ↂωↂ.disabled = true;
+ಠωಠ.openExtension = function() {
+    ಠωಠ.close_open[1].trigger();
+    ಠωಠ.isClosed = false;
+    ಠωಠ.disabled = true;
 }

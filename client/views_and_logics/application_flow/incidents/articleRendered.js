@@ -1,6 +1,6 @@
-//ↂωↂ is an incident, meow meow meow~
-var ↂωↂ = articleRendered;
-ↂωↂ.addCBforDefault(function() {
+//ಠωಠ is an incident, meow meow meow~
+var ಠωಠ = articleRendered;
+ಠωಠ.addCBforDefault(function() {
     var data = articleLoaded.data,
         comment = $(".archycomment"),
         forward_to_post = $(".forward_to_post");

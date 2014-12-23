@@ -1,13 +1,13 @@
-//ↂωↂ is an incident, meow meow meow~
-var ↂωↂ = qsHeader;
-ↂωↂ.addCBforDefault(function() {
+//ಠωಠ is an incident, meow meow meow~
+var ಠωಠ = qsHeader;
+ಠωಠ.addCBforDefault(function() {
     //defines doms and variables used for other incidents
-    ↂωↂ._0a = {
+    ಠωಠ._0a = {
         object: $(".archyhead .central"),
         position: "center",
         current_article: null,
         timeForSetTimeout: function() {
-            if (ↂωↂ._0a.position === "center") {
+            if (ಠωಠ._0a.position === "center") {
                 return 400;
             } else {
                 return 0;
@@ -16,7 +16,7 @@ var ↂωↂ = qsHeader;
     }
 });
 
-ↂωↂ.addCBforMobile(function() {
+ಠωಠ.addCBforMobile(function() {
 
 });
 
@@ -24,9 +24,9 @@ var ↂωↂ = qsHeader;
 __0a = function(key, value) {
     if (value === undefined) {
         //simply return the value
-        return ↂωↂ._0a[key]
+        return ಠωಠ._0a[key]
     } else {
         //modify the value
-        return ↂωↂ._0a[key] = value
+        return ಠωಠ._0a[key] = value
     }
 }
