@@ -1,3 +1,17 @@
+<template name="adminLoginForm">
+  <div class="container">
+    <div id="admin-login">
+      {{#if firstUser}}
+        Login to create the first user and automatically mark them as an
+        admin.
+      {{else}}
+        Login as an admin user to proceed.
+      {{/if}}
+      {{> loginButtons}}
+    </div>
+  </div>
+</template>
+
 <template name="ArchySanctuary">
 <div id="blog-admin">
   <div class="container blog-admin-index">
