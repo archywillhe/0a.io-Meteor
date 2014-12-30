@@ -9,7 +9,6 @@ nemo64:bootstrap
 less
 underscore
 kaptron:minimongoid
-linto:fontawesome
 accounts-twitter
 accounts-ui-unstyled
 aslagle:reactive-table
@@ -22,3 +21,4 @@ reywood:iron-router-ga
 spiderable
 slava:xray
 tmeasday:publish-counts
+fortawesome:fontawesome
