@@ -52,7 +52,7 @@ db.users.find()
 ```
 To make a user an admin, do this:
 ```bash
-db.users.update({ "_id" : USERID},{$set:{"profile.admin":1}});
+db.users.update({ "_id" : USERID},{$set:{admin:1}});
 ```
 Replace USERID with the _id of the user whom you want to make as admin.
 
