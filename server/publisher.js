@@ -48,3 +48,8 @@ Meteor.publish('singleArticleBySlug', function(slug) {
 Meteor.publish('changelog', function() {
     return Changelog.find({});
 });
+
+Meteor.publish('usersCount', function () {
+  Counts.publish(this, 'usersCount', Meteor.users.find());
+});
+

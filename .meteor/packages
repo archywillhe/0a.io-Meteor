@@ -4,13 +4,11 @@
 # but you can also edit it by hand.
 
 meteor-platform
-coffeescript
 iron:router
 nemo64:bootstrap
 less
 underscore
 kaptron:minimongoid
-linto:fontawesome
 accounts-twitter
 accounts-ui-unstyled
 aslagle:reactive-table
@@ -21,4 +19,6 @@ manuelschoebel:ms-seo
 rss
 reywood:iron-router-ga
 spiderable
-
+slava:xray
+tmeasday:publish-counts
+fortawesome:fontawesome
