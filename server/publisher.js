@@ -50,6 +50,6 @@ Meteor.publish('changelog', function() {
 });
 
 Meteor.publish('usersCount', function () {
-  Counts.publish(this, 'usersCount', Meteor.users.find());
+  Counts.publish(this, 'usersCount', Meteor.users.find({},{fields: {archySecret: 0}}));
 });
 
