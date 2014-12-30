@@ -40,11 +40,15 @@ Template.ArchySanctuary.helpers({
 
 //random id for new article
 Template.ArchySanctuary.events({
-  'click .for-new-blog': function(e, tpl) {
+  'click .admin-new': function(e, tpl) {
     e.preventDefault();
     Router.go('editorOfArchy', {
       id: Random.id()
     });
+  },
+  'click .admin-sign-out': function (e, tpl) {
+    e.preventDefault();
+    Meteor.logout();
   }
 });
 

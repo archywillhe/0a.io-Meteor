@@ -1,11 +1,11 @@
 <template name="adminLoginForm">
   <div class="container">
     <div id="admin-login">
-      {{#if firstUser}}
+      {{#if getPublishedCount 'usersCount'}}
+        Login as an admin user to proceed.
+      {{else}}
         Login to create the first user and automatically mark them as an
         admin.
-      {{else}}
-        Login as an admin user to proceed.
       {{/if}}
       {{> loginButtons}}
     </div>
@@ -20,7 +20,10 @@
         <h1>0a: Archy here</h1>
       </div>
       <div class="col-md-8">
-        <a href="#" class="btn pull-right btn-default margin-top-right-15">
+        <a href="#" class="admin-sign-out btn pull-right btn-default margin-top-right-15">
+          <i class="fa fa-sign-out"></i> Log out
+        </a>
+        <a href="#" class="admin-new btn pull-right btn-default margin-top-right-15">
           <i class="fa fa-plus"></i> Write something!
         </a>
         <select class="btn pull-right form-control btn-default width-auto margin-top-right-15">

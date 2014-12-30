@@ -6,7 +6,7 @@ Meteor.methods({
     },
     isItArchy: function() {
         if (Meteor.user()) {
-            if (Meteor.user().profile.admin == 1) {
+            if (Meteor.user().admin == 1) {
                 return true;
             }
         }
