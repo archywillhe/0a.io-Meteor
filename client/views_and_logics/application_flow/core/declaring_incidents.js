@@ -19,7 +19,7 @@ incident.prototype.mobile = function(){
 }
 
 incident.prototype.addToFn = function(name,fn){
-	var previousFn = this[name].bind(this);
+	var previousFn = _.bind(this[name],this);
 	this[name] = function(){
 		previousFn(); 
 		fn(); 
