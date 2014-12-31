@@ -2,7 +2,9 @@ function mobileView() {
     return ($(window).width() < 768);
 }
 
-var isMobile = mobileView();
+Meteor.startUp(function(){
+    isMobile = mobileView();
+});
 
 Template.qsHeader.rendered = function() {
     loadingControl.default();
