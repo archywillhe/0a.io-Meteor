@@ -35,7 +35,7 @@ After you have created your twitter app, just configure the twitter login using 
 
 #Making a user an admin
 
-At the current moment you would need to do it yourself in a MongoDB shell.
+The first user to log in would automatically become the admin. To update the adminship of a user, you would need to do it yourself in a MongoDB shell.
 <br>To run a MongoDB shell, cd into your app directory, and do this:
 ```bash
 Meteor mongo
