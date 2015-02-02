@@ -2,7 +2,7 @@ function mobileView() {
     return ($(window).width() < 768);
 }
 
-Meteor.startUp(function(){
+Meteor.startup(function(){
     isMobile = mobileView();
 });
 
