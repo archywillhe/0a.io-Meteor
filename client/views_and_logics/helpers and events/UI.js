@@ -1,3 +1,7 @@
+UI.registerHelper("notInProd", function(){
+	return window.location.origin!=="http://0a.io";
+});
+
 UI.registerHelper("simpleTable", function() {
     return {
         rowsPerPage: 0,
