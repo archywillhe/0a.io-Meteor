@@ -7,7 +7,9 @@
 			{{> yield}}
 		</div>
 	</div>
+    {{#if articles}}
 	{{>qsFooter}}
+    {{/if}}
 </div>
 </template>
 
@@ -33,6 +35,14 @@
 
 <template name="loading">
 <div class="being_loaded">
-	loading {{currentlyLoading}}..
+    <div class="inline">loading {{currentlyLoading}} </div> 
+    <div class="spinner">
+              	     <div class="rect1"></div>
+	                 <div class="rect2"></div>
+	                 <div class="rect3"></div>
+	                 <div class="rect4"></div>
+	                 <div class="rect5"></div>
+	                </div>
+
 </div>
 </template>
