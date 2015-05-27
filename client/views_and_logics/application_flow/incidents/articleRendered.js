@@ -4,8 +4,6 @@ var ಠωಠ = articleRendered;
     var data = articleLoaded.data,
         comment = $(".archycomment"),
         forward_to_post = $(".forward_to_post");
-    //eval is evil :( I will figure out some other way to do this
-    eval(data.article.head);
     $(".social_button").each(function() {
         $(this).on("click", function() {
             window.open(this.href, 'share',
@@ -35,9 +33,8 @@ var ಠωಠ = articleRendered;
         clickloop("none", "block", "Hide Comments", "Show Comments");
         disqusComment.default();
     });
-
-    var window_height = $(window).height();
-    var comments_offset = comment.offset().top - window_height + 132;
+     
+    comments_offset = comment.offset().top - $(window).height() + 132;
 
     $(window).on("scroll.comments", function() {
         if ($(this).scrollTop() > comments_offset) {

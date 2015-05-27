@@ -9,8 +9,15 @@ Template.singleArticle.helpers({
       return "1 min ";
     }
   },
+afterRender : function(content, code){
+ //if(code){ eval(code); }
+  Tracker.afterFlush(function() {
+      if(code){ eval(code); }
+  });
+ console.log("code");
+},
 	renderContent :function(content){
-    if(content!==undefined){
+    if(content){
       //make lines into <p/>
   		content = content.replace(/(.+\n)/g, function(match, contents, offset, s)
       {
